@@ -9,7 +9,7 @@ class ClaudeTrace < Formula
   depends_on "tmux"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", "--prefix=#{libexec}", "--production", "--ignore-scripts"
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
